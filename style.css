@@ -40,6 +40,7 @@ h2 {
     border: 1px solid black;
     background: white;
     padding: .6rem;
+    color: black;
 }
 
 .button:active {

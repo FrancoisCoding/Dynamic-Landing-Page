@@ -5,6 +5,8 @@ let name = document.getElementById('name');
 let focus = document.getElementById('focus');
 const amPmButton = document.getElementById('1');
 const militaryTimeButton = document.getElementById('2');
+const morningImages = ['https://i.ibb.co/7vDLJFb/morning.jpg', 'images/morning1.jpg', 'images/morning2.jpg', 'images/morning3.jpg', 'images/morning4.jpg', 'images/morning5.jpg'];
+const morningImgRandom = morningImages[Math.floor(Math.random() * 6)];
 
 // Options
 showAmPm = true;
@@ -55,16 +57,17 @@ function addZero(n) {
 
 // Set Background Image and Greeting based on Time
 function setBgGreet() {
-    let currentTime = new Date(),
+    let currentTime = new Date(2019, 06, 23, 7, 15),
+        //    let currentTime = new Date(),
         hour = currentTime.getHours(),
         militaryHour = currentTime.getHours();
 
     if (hour < 12 || militaryHour < 12) {
         // Morning
-        document.body.style.backgroundImage = "url('https://i.ibb.co/7vDLJFb/morning.jpg')";
+        document.body.style.backgroundImage = "url(morningImgRandom)";
         document.body.style.backgroundSize = "cover";
         greeting.textContent = 'Good Morning';
-    } else if (hour < 18 || militaryHour < 18) {
+    } else if (hour < 20 || militaryHour < 20) {
         // Afternoon
         document.body.style.backgroundImage = "url('https://i.ibb.co/3mThcXc/afternoon.jpg')"
         document.body.style.backgroundSize = "cover";
