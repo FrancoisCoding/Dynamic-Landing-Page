@@ -1,12 +1,21 @@
 // DOM Selectors
 const time = document.getElementById('time');
 let greeting = document.getElementById('greeting');
+let h2 = document.querySelectorAll("h2");
 let name = document.getElementById('name');
 let focus = document.getElementById('focus');
 const amPmButton = document.getElementById('1');
 const militaryTimeButton = document.getElementById('2');
+
+// Variables
 const morningImages = ['https://i.ibb.co/7vDLJFb/morning.jpg', 'images/morning1.jpg', 'images/morning2.jpg', 'images/morning3.jpg', 'images/morning4.jpg', 'images/morning5.jpg'];
 const morningImgRandom = morningImages[Math.floor(Math.random() * 6)];
+
+const afternoonImages = ['https://i.ibb.co/3mThcXc/afternoon.jpg', 'images/evening1.jpg', 'images/evening2.jpg', 'images/evening3.jpg', 'images/evening4.jpg', 'images/evening5.jpg'];
+const afternoonImgRandom = afternoonImages[Math.floor(Math.random() * 6)];
+
+const nightImages = ['https://i.ibb.co/3mThcXc/afternoon.jpg', 'images/evening1.jpg', 'images/evening2.jpg', 'images/evening3.jpg', 'images/evening4.jpg', 'images/evening5.jpg'];
+const nightRandom = afternoonImages[Math.floor(Math.random() * 6)];
 
 // Options
 showAmPm = true;
@@ -57,19 +66,35 @@ function addZero(n) {
 
 // Set Background Image and Greeting based on Time
 function setBgGreet() {
-    let currentTime = new Date(2019, 06, 23, 7, 15),
-        //    let currentTime = new Date(),
+        let currentTime = new Date(),
         hour = currentTime.getHours(),
         militaryHour = currentTime.getHours();
 
     if (hour < 12 || militaryHour < 12) {
         // Morning
-        document.body.style.backgroundImage = "url(morningImgRandom)";
+        if (morningImgRandom == `images/morning3.jpg`) {
+            h2[0].style.opacity = '1';
+            h2[1].style.opacity = '1';
+        } else if (morningImgRandom == `images/morning4.jpg`) {
+            h2[0].style.opacity = '.8';
+            h2[1].style.opacity = '.8';
+        }
+
+        document.body.style.backgroundImage = `url(${morningImgRandom})`;
         document.body.style.backgroundSize = "cover";
         greeting.textContent = 'Good Morning';
     } else if (hour < 20 || militaryHour < 20) {
         // Afternoon
-        document.body.style.backgroundImage = "url('https://i.ibb.co/3mThcXc/afternoon.jpg')"
+        if (afternoonImgRandom == `images/evening5.jpg`) {
+            time.style.color = 'white';
+            greeting.style.color = 'white';
+            name.style.color = 'white';
+            h2[0].style.color = 'white';
+            h2[1].style.color = 'white';
+            h2[0].style.opacity = '.8';
+            h2[1].style.opacity = '.8';
+        }
+        document.body.style.backgroundImage = `url(${afternoonImgRandom})`;
         document.body.style.backgroundSize = "cover";
         greeting.textContent = 'Good Afternoon';
     } else {

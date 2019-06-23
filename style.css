@@ -37,14 +37,16 @@ h2 {
 }
 
 .button {
-    border: 1px solid black;
+    margin-left: 1rem;
+    border-radius: 20px;
     background: white;
     padding: .6rem;
     color: black;
 }
 
-.button:active {
-    opacity: .8;
+.button:hover {
+    background: lawngreen;
+    opacity: .5; 
 }
 
 @media(max-width: 700px) {
