@@ -14,8 +14,8 @@ const morningImgRandom = morningImages[Math.floor(Math.random() * 6)];
 const afternoonImages = ['https://i.ibb.co/3mThcXc/afternoon.jpg', 'images/evening1.jpg', 'images/evening2.jpg', 'images/evening3.jpg', 'images/evening4.jpg', 'images/evening5.jpg'];
 const afternoonImgRandom = afternoonImages[Math.floor(Math.random() * 6)];
 
-const nightImages = ['https://i.ibb.co/3mThcXc/afternoon.jpg', 'images/evening1.jpg', 'images/evening2.jpg', 'images/evening3.jpg', 'images/evening4.jpg', 'images/evening5.jpg'];
-const nightRandom = afternoonImages[Math.floor(Math.random() * 6)];
+const nightImages = ['https://i.ibb.co/924T2Wv/night.jpg', 'images/night1.jpg', 'images/night2.jpg', 'images/night3.jpg', 'images/night4.jpg', 'images/night5.jpg'];
+const nightImgRandom = nightImages[Math.floor(Math.random() * 6)];
 
 // Options
 showAmPm = true;
@@ -66,7 +66,8 @@ function addZero(n) {
 
 // Set Background Image and Greeting based on Time
 function setBgGreet() {
-        let currentTime = new Date(),
+        let currentTime = new Date(2019, 05, 24, 22, 05),
+//        let currentTime = new Date(),
         hour = currentTime.getHours(),
         militaryHour = currentTime.getHours();
 
@@ -99,7 +100,7 @@ function setBgGreet() {
         greeting.textContent = 'Good Afternoon';
     } else {
         // Night
-        document.body.style.backgroundImage = "url('https://i.ibb.co/924T2Wv/night.jpg')";
+        document.body.style.backgroundImage = `url(${nightImgRandom})`;
         document.body.style.backgroundSize = "cover";
         greeting.textContent = 'Good Evening';
         document.body.style.color = 'white';
