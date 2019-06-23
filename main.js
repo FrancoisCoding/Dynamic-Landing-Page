@@ -66,8 +66,7 @@ function addZero(n) {
 
 // Set Background Image and Greeting based on Time
 function setBgGreet() {
-        let currentTime = new Date(2019, 05, 24, 22, 05),
-//        let currentTime = new Date(),
+        let currentTime = new Date(),
         hour = currentTime.getHours(),
         militaryHour = currentTime.getHours();
 

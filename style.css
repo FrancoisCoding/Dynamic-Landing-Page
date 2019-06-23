@@ -46,11 +46,46 @@ h2 {
 
 .button:hover {
     background: lawngreen;
-    opacity: .5; 
+    opacity: .5;
+}
+
+@media(max-width: 850px) {
+    .container {
+        align-self: center;
+    }
+    
+    .button {
+        padding: .3rem;
+        font-size: 1rem;
+    }
 }
 
 @media(max-width: 700px) {
     #time {
         font-size: 6rem;
+    }
+}
+
+
+@media(max-width: 470px) {
+    #time {
+        font-size: 3.5rem;
+    }
+
+    #greeting {
+        font-size: 1.5rem;
+    }
+
+    #name {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .button {
+        padding: .3rem;
+        font-size: .8rem;
     }
 }
