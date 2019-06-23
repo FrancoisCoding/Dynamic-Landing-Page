@@ -3,17 +3,34 @@ const time = document.getElementById('time');
 let greeting = document.getElementById('greeting');
 let name = document.getElementById('name');
 let focus = document.getElementById('focus');
+const amPmButton = document.getElementById('1');
+const militaryTimeButton = document.getElementById('2');
 
 // Options
-const showAmPm = true;
-const showMilitaryTime = false;
+showAmPm = true;
+showMilitaryTime = false;
+
+amPmButton.addEventListener('click', function () {
+    if (showAmPm == true) showAmPm = false;
+    else showAmPm = true;
+
+    // Changes Button Text on Click
+    if (amPmButton.textContent == "Remove Am/Pm") amPmButton.textContent = "Add Am/Pm";
+    else amPmButton.textContent = "Remove Am/Pm";
+})
+
+militaryTimeButton.addEventListener('click', function () {
+    if (showMilitaryTime == false) showMilitaryTime = true;
+    else showMilitaryTime = false;
+})
 
 // Display Time
 function showTime() {
     let currentTime = new Date(),
         hour = currentTime.getHours(),
         min = currentTime.getMinutes(),
-        sec = currentTime.getSeconds();
+        sec = currentTime.getSeconds(),
+        militaryHour = currentTime.getHours();
 
     // Set AM or PM
     const amPm = hour >= 12 ? 'PM' : 'AM';
@@ -22,7 +39,11 @@ function showTime() {
     hour = hour % 12 || 12;
 
     // Output Time
-    time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${showAmPm ? amPm : ''}`
+    if (showMilitaryTime == false) {
+        time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${showAmPm ? amPm : ''}`
+    } else {
+        time.innerHTML = `${militaryHour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${showAmPm ? amPm : ''}`
+    }
 
     setTimeout(showTime, 1000);
 }
@@ -35,14 +56,15 @@ function addZero(n) {
 // Set Background Image and Greeting based on Time
 function setBgGreet() {
     let currentTime = new Date(),
-        hour = currentTime.getHours();
+        hour = currentTime.getHours(),
+        militaryHour = currentTime.getHours();
 
-    if (hour < 12) {
+    if (hour < 12 || militaryHour < 12) {
         // Morning
         document.body.style.backgroundImage = "url('https://i.ibb.co/7vDLJFb/morning.jpg')";
         document.body.style.backgroundSize = "cover";
         greeting.textContent = 'Good Morning';
-    } else if (hour < 18) {
+    } else if (hour < 18 || militaryHour < 18) {
         // Afternoon
         document.body.style.backgroundImage = "url('https://i.ibb.co/3mThcXc/afternoon.jpg')"
         document.body.style.backgroundSize = "cover";
