@@ -1,7 +1,7 @@
 // DOM Selectors
 const time = document.getElementById('time');
 let greeting = document.getElementById('greeting');
-let h2 = document.querySelectorAll("h2");
+let h2 = document.querySelector(".h2");
 let name = document.getElementById('name');
 let focus = document.getElementById('focus');
 const amPmButton = document.getElementById('1');
@@ -35,12 +35,12 @@ amPmButton.addEventListener('click', function () {
     // Changes Button Text on Click
     if (amPmButton.textContent == "Remove Am/Pm") amPmButton.textContent = "Add Am/Pm";
     else amPmButton.textContent = "Remove Am/Pm";
-})
+});
 
 militaryTimeButton.addEventListener('click', function () {
     if (showMilitaryTime == false) showMilitaryTime = true;
     else showMilitaryTime = false;
-})
+});
 
 // Display Time
 function showTime() {
@@ -80,11 +80,9 @@ function setBgGreet() {
     if (hour < 12 || militaryHour < 12) {
         // Morning
         if (morningImgRandom == `images/morning3.jpg`) {
-            h2[0].style.opacity = '1';
-            h2[1].style.opacity = '1';
+            h2.style.opacity = '1';
         } else if (morningImgRandom == `images/morning4.jpg`) {
-            h2[0].style.opacity = '.8';
-            h2[1].style.opacity = '.8';
+            h2.style.opacity = '.8';
         }
 
         document.body.style.backgroundImage = `url(${morningImgRandom})`;
@@ -96,10 +94,8 @@ function setBgGreet() {
             time.style.color = 'white';
             greeting.style.color = 'white';
             name.style.color = 'white';
-            h2[0].style.color = 'white';
-            h2[1].style.color = 'white';
-            h2[0].style.opacity = '.8';
-            h2[1].style.opacity = '.8';
+            h2.style.color = 'white';
+            h2.style.opacity = '.8';
         }
         document.body.style.backgroundImage = `url(${afternoonImgRandom})`;
         document.body.style.backgroundSize = "cover";

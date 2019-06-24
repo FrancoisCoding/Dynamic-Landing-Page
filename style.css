@@ -16,7 +16,7 @@ body {
 }
 
 #time {
-    font-size: 8rem;
+    font-size: 6.1rem;
 }
 
 h1 {
@@ -26,6 +26,25 @@ h1 {
 h2 {
     margin-bottom: 0.5rem;
     opacity: 0.6;
+}
+
+input {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    width: 15rem;
+}
+
+input:last-child {
+    width: 12rem;
+    font-size: 1.9rem;
+}
+
+#focus {
+    text-align: center;
 }
 
 .container {
@@ -152,12 +171,14 @@ h2 {
         font-size: 1.5rem;
     }
 
-    #name {
-        font-size: 1.5rem;
+    input {
+        font-size: 1.4rem;
+        width: 11.5rem;
     }
 
-    h2 {
-        font-size: 1rem;
+    input:last-child {
+        font-size: 1.4rem;
+        width: 8.9rem;
     }
 
     .button {
@@ -185,5 +206,21 @@ h2 {
         to {
             width: 36%
         }
+    }
+}
+
+@media(max-width: 360px) {
+    #greeting {
+        font-size: 1.3rem;
+    }
+
+    input {
+        font-size: 1.3rem;
+        width: 10.3rem;
+    }
+
+    input:last-child {
+        font-size: 1.3rem;
+        width: 8.3rem;
     }
 }
