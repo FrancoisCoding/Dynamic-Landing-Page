@@ -5,10 +5,8 @@ function addZero(n){return(parseInt(n,10)<10?'0':'')+n}
 function setBgGreet(){let currentTime=new Date(),hour=currentTime.getHours(),militaryHour=currentTime.getHours();if(hour<12||militaryHour<12){if(morningImgRandom==`images/morning3.jpg`){h2.style.opacity='1'}else if(morningImgRandom==`images/morning4.jpg`){h2.style.opacity='.8'}
 document.body.style.backgroundImage=`url(${morningImgRandom})`;document.body.style.backgroundSize="cover";greeting.textContent='Good Morning'}else if(hour<20||militaryHour<20){if(afternoonImgRandom==`images/evening5.jpg`){time.style.color='white';greeting.style.color='white';name.style.color='white';h2.style.color='white';h2.style.opacity='.8'}
 document.body.style.backgroundImage=`url(${afternoonImgRandom})`;document.body.style.backgroundSize="cover";greeting.textContent='Good Afternoon'}else{document.body.style.backgroundImage=`url(${nightImgRandom})`;document.body.style.backgroundSize="cover";greeting.textContent='Good Evening';document.body.style.color='white'}}
-function getName(){if(localStorage.getItem('name')==''){localStorage.clear()}
-if(localStorage.getItem('name')===null){name.textContent='[Enter Name]'}else{name.textContent=localStorage.getItem('name')}}
-function setName(e){if(e.type==='keypress'){if(e.keyCode==13){localStorage.setItem('name',e.target.innerText);name.blur()}}else{localStorage.setItem('name',e.target.innerText)}}
-function getFocus(){if(localStorage.getItem('focus')==''){localStorage.clear()}
-if(localStorage.getItem('focus')===null){focus.textContent='[Enter Focus]'}else{focus.textContent=localStorage.getItem('focus');focus.classList.remove('type')}}
-function setFocus(e){if(e.type==='keypress'){if(e.keyCode==13){localStorage.setItem('focus',e.target.innerText);focus.blur()}}else{localStorage.setItem('focus',e.target.innerText)}}
+function getName(){if(localStorage.getItem('name')==''){localStorage.clear()}else{name.value=localStorage.getItem('name')}}
+function setName(e){if(e.type==='keypress'){if(e.keyCode==13){localStorage.setItem('name',name.value);name.blur()}}else{localStorage.setItem('name',name.value)}}
+function getFocus(){if(localStorage.getItem('focus')==''){localStorage.clear()}else{focus.value=localStorage.getItem('focus');focus.classList.remove('type')}}
+function setFocus(e){if(e.type==='keypress'){if(e.keyCode==13){localStorage.setItem('focus',focus.value);focus.blur()}}else{localStorage.setItem('focus',focus.value)}}
 name.addEventListener('keypress',setName);name.addEventListener('blur',setName);focus.addEventListener('keypress',setFocus);focus.addEventListener('blur',setFocus);showTime();setBgGreet();getName();getFocus()
