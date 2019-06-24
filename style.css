@@ -44,48 +44,97 @@ h2 {
     color: black;
 }
 
-.button:hover {
-    background: lawngreen;
-    opacity: .5;
-}
-
 .type {
-  overflow: hidden;
-  border-right: .15em solid black;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: .15em;
-  animation: 
-    typing 1s steps(12, end),
-    blink-caret .75s step-end infinite;
+    overflow: hidden;
+    border-right: .15em solid black;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation:
+        typing 1s steps(12, end),
+        blink-caret .75s step-end infinite;
 }
 
 /* The typing effect */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 22% }
+    from {
+        width: 0
+    }
+
+    to {
+        width: 22%
+    }
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: black; }
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: black;
+    }
+}
+
+/* Remove Hover From Mobile*/
+@media(min-width: 850px) {
+    .button:hover {
+        background: lawngreen;
+        opacity: .5;
+    }
 }
 
 @media(max-width: 850px) {
     .container {
         align-self: center;
     }
-    
+
     .button {
         padding: .3rem;
         font-size: 1rem;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 26%
+        }
     }
 }
 
 @media(max-width: 700px) {
     #time {
         font-size: 6rem;
+    }
+}
+
+@media(max-width: 620px) {
+    @keyframes typing {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 35%
+        }
+    }
+}
+
+@media(max-width: 550px) {
+    @keyframes typing {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 33%
+        }
     }
 }
 
@@ -110,5 +159,27 @@ h2 {
     .button {
         padding: .3rem;
         font-size: .8rem;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 28%
+        }
+    }
+}
+
+@media(max-width: 470px) {
+    @keyframes typing {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 36%
+        }
     }
 }
