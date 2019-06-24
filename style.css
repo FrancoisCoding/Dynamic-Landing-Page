@@ -44,6 +44,10 @@ h2 {
     color: black;
 }
 
+.button:hover {
+    cursor: pointer;
+}
+
 .type {
     overflow: hidden;
     border-right: .15em solid black;

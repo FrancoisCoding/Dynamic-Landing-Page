@@ -116,6 +116,9 @@ function setBgGreet() {
 
 // Get Name
 function getName() {
+    if (localStorage.getItem('name') == '') {
+        localStorage.clear();
+    }
     if (localStorage.getItem('name') === null) {
         name.textContent = '[Enter Name]';
     } else {
@@ -138,10 +141,14 @@ function setName(e) {
 
 // Get Focus
 function getFocus() {
+    if (localStorage.getItem('focus') == '') {
+        localStorage.clear();
+    }
     if (localStorage.getItem('focus') === null) {
         focus.textContent = '[Enter Focus]';
     } else {
         focus.textContent = localStorage.getItem('focus');
+        focus.classList.remove('type');
     }
 }
 
