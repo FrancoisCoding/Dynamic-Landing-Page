@@ -17,6 +17,13 @@ const afternoonImgRandom = afternoonImages[Math.floor(Math.random() * 6)];
 const nightImages = ['https://i.ibb.co/924T2Wv/night.jpg', 'images/night1.jpg', 'images/night2.jpg', 'images/night3.jpg', 'images/night4.jpg', 'images/night5.jpg'];
 const nightImgRandom = nightImages[Math.floor(Math.random() * 6)];
 
+
+// Animations
+focus.classList.add('type');
+focus.addEventListener("animationend", function () {
+    focus.style.borderRight = 'none';
+})
+
 // Options
 showAmPm = true;
 showMilitaryTime = false;
@@ -66,7 +73,7 @@ function addZero(n) {
 
 // Set Background Image and Greeting based on Time
 function setBgGreet() {
-        let currentTime = new Date(),
+    let currentTime = new Date(),
         hour = currentTime.getHours(),
         militaryHour = currentTime.getHours();
 

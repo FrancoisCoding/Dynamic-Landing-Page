@@ -49,6 +49,29 @@ h2 {
     opacity: .5;
 }
 
+.type {
+  overflow: hidden;
+  border-right: .15em solid black;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: 
+    typing 1s steps(12, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 22% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: black; }
+}
+
 @media(max-width: 850px) {
     .container {
         align-self: center;
